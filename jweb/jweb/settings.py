@@ -87,6 +87,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = '/home/jonmsawyer/dev-www.jonmsawyer.com/jweb/jweb/static'
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'jweb', 'static'),
     os.path.join(BASE_DIR, 'www', 'static'),
