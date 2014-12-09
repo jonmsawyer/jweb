@@ -1,4 +1,22 @@
+{% load staticfiles %}
 {% block header %}
-Jon M Sawyer Header
+    <div>
+      <div id="logo">
+        <a href="/" title="Home"><img src="{% static 'www/logo.jpg' %}" alt="Home" /></a>
+      </div>
+      <hgroup id="sitename">
+        <h2><a href="/" title="Home">Jon M Sawyer</a></h2>
+        <p>Code, philosophy, and just plain awesomeness.</p>
+      </hgroup>
+    </div>
+    <nav id="navigation" class="clearfix" role="navigation">
+      <div id="main-menu">
+        <ul class="menu">
+          <li class="first leaf"><a href="/" class="active">Home</a></li>
+          <li class="leaf"><a href="/blog">Blog</a></li>
+          <li class="last leaf"><a href="https://github.com/jonmsawyer" title="Fork me on GitHub!">My Github</a></li>
+        </ul>
+      </div>
+    </nav>
 {% endblock header %}
 

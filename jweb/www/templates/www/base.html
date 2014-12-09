@@ -1,12 +1,16 @@
 {% extends 'base/base.html' %}
 {% load staticfiles %}
 
+{% block favicon %}
+        <link rel="shortcut icon" href="{% static 'www/favicon.jpg' %}" type="image/jpeg" />
+{% endblock favicon %}
+
 {% block pagetitle %}WWW{% endblock pagetitle %}
 
 {% block javascripts %}{% endblock javascripts %}
 
 {% block stylesheets %}
-        <link rel="stylesheet" href="{% static 'www.css' %}">
+        <link rel="stylesheet" href="{% static 'www/www.css' %}">
 {% endblock stylesheets %}
 
 {% block scripts %}{% endblock scripts %}

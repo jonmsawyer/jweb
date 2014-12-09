@@ -20,7 +20,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	font-size: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+        font-family: "Droid Sans",arial,serif;
 }
 ol, ul {
 	list-style: none;
@@ -47,3 +48,11 @@ table {
 	border-spacing: 0;
 }
 
+div#wrap {
+    border-top: 3px solid #B81007;
+    width: 920px;
+    padding: 0px 40px 35px;
+    background: none repeat scroll 0% 0% #FFF;
+    margin: 0px auto;
+    border-top: 3px solid #B81007;
+}
