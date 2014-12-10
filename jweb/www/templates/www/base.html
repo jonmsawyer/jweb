@@ -1,23 +1,56 @@
 {% extends 'base/base.html' %}
+
 {% load staticfiles %}
 
-{% block favicon %}
-        <link rel="shortcut icon" href="{% static 'www/favicon.jpg' %}" type="image/jpeg" />
-{% endblock favicon %}
+{% block pagetitle %}Home{% endblock pagetitle %}
 
-{% block pagetitle %}WWW{% endblock pagetitle %}
+{% block pagedescription %}The personal and professional website of Jonathan Sawyer.{% endblock pagedescription %}
 
-{% block javascripts %}{% endblock javascripts %}
+{% block appcopyright %}
+   {% block copyright %}
+      <link rel="copyright" href="{% url 'copyright' %}">
+   {% endblock copyright %}  
+{% endblock appcopyright %}
 
-{% block stylesheets %}
-        <link rel="stylesheet" href="{% static 'www/www.css' %}">
-{% endblock stylesheets %}
+{% block appfavicon %}
+   {% block favicon %}
+      <link rel="shortcut icon" href="{% static 'www/favicon.jpg' %}" type="image/jpeg" />
+   {% endblock favicon %}
+{% endblock appfavicon %}
 
-{% block scripts %}{% endblock scripts %}
+{% block appstylesheets %}
+   <link rel="stylesheet" href="{% static 'site/site.css' %}">
+   <link rel="stylesheet" href="{% static 'www/www.css' %}">
+   <link rel="stylesheet" href="{% static 'www/header.css' %}">
+   <link rel="stylesheet" href="{% static 'www/footer.css' %}">
+   {% block stylesheets %}{% endblock stylesheets %}
+{% endblock appstylesheets %}
 
-{% block styles %}{% endblock styles %}
+{% block appjavascripts %}
+   {% block javascripts %}{% endblock javascripts %}
+{% endblock appjavascripts %}
 
-{% block content %}
-WWW Home
-{% endblock %}
+{% block appscripts %}
+   {% block scripts %}{% endblock scripts %}
+{% endblock appscripts %}
+
+{% block appstyles %}
+   {% block styles %}{% endblock styles %}
+{% endblock appstyles %}
+
+{% block appheader %}
+   {% block header %}
+      {% include 'www/header.html' %}
+   {% endblock header %}
+{% endblock appheader %}
+
+{% block appcontent %}
+   {% block content %}WWW Home{% endblock content %}
+{% endblock appcontent %}
+
+{% block appfooter %}
+   {% block footer %}
+      {% include 'www/footer.html' %}
+   {% endblock footer %}
+{% endblock appfooter %}
 

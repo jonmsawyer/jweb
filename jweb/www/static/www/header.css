@@ -1,0 +1,88 @@
+/* html > body > div#wrap > header styles */
+
+#header.clearfix:after,
+#header #nav.clearfix:after {
+    /* for both the <header> and <nav> */
+    display: block;
+    visibility: hidden;
+    content: ".";
+    clear: both;
+    text-indent: -9999px;
+    height: 0px;
+}
+
+#logo {
+    float: left;
+    padding: 20px 15px 20px 0px;
+}
+
+#logo img {
+    border-radius: 15px;
+}
+
+#sitename {
+    float: left;
+    padding: 20px 0px;
+}
+
+#sitename h2 a,
+#sitename h1 a {
+    color: #222;
+    text-decoration: none;
+}
+
+#sitename h1 a:hover,
+#sitename h2 a:hover {
+    color: #B81007;
+}
+
+#sitename p {
+    font-weight: normal;
+    color: #666;
+    font-size: 12px;
+}
+
+#main-menu .menu {
+    float: left;
+    margin-bottom: 1em;
+    line-height: 1;
+}
+
+#main-menu .menu, #main-menu .menu * {
+    margin: 0px;
+    padding: 0px;
+    list-style: none outside none;
+}
+
+#main-menu ul.menu {
+    border: medium none;
+    list-style: none outside none;
+    text-align: left;
+}
+
+#main-menu .menu li {
+    float: left;
+    position: relative;
+}
+
+#main-menu .menu a.active, #main-menu .menu ul a.active {
+    background: none repeat scroll 0% 0% #B81007;
+}
+
+#main-menu .menu a.active {
+    color: #FFF !important;
+    background: none repeat scroll 0% 0% #B81007;
+}
+
+#main-menu .menu a {
+    color: #666;
+    padding: 1.5em 15px;
+    text-decoration: none;
+    display: block;
+    position: relative;
+}
+
+#navigation {
+    float: right;
+}
+

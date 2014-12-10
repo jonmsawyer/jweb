@@ -1,32 +1,24 @@
-{% load staticfiles %}<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-    <title>{% block pagetitle %}BASE{% endblock pagetitle %} - Jon M Sawyer .com</title>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="author" content="Jonathan Sawyer <jonmsawyer (AT) gmail (DOT) com>">
-        <meta name="description" content="The personal, and professional, website of Jonathan Sawyer.">
-        <link rel="copyright" href="{% url 'copyright' %}">
-{% block favicon %}{% endblock favicon %}
-
-        <link rel="stylesheet" href="{% static 'site/site.css' %}">
-{% block stylesheets %}{% endblock stylesheets %}
-
-{% block javascripts %}{% endblock javascripts %}
-    </head>
-
-    <body>
+  <title>{% block pagetitle %}Jon M Sawyer .com{% endblock pagetitle %} - Jon M Sawyer .com</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jonathan Sawyer <jonmsawyer (AT) gmail (DOT) com>">
+    <meta name="description" content="{% block pagedescription %}The personal and professional website of Jonathan Sawyer.{% endblock pagedescription %}">
+{% block appcopyright %}{% endblock appcopyright %}
+{% block appfavicon %}{% endblock appfavicon %}
+{% block appstylesheets %}{% endblock appstylesheets %}
+{% block appjavascripts %}{% endblock appjavascripts %}
+  </head>
+  <body>
     <div id="wrap">
-    <header id="header" class="clearfix" role="banner">
-{% block header %}{% include 'www/header.html' %}{% endblock header %}
-    </header>
-{% block content %}{% endblock content %}
-    </body>
-    <footer>
-{% block footer %}{% include 'www/footer.html' %}{% endblock footer %}
-    </footer>
-    </div>
+{% block appheader %}{% endblock appheader %}
+{% block appcontent %}{% endblock appcontent %}
+{% block appfooter %}{% endblock appfooter %}
+    </div><!-- end div#wrap -->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-{% block styles %}{% endblock styles %}
-{% block scripts %}{% endblock scripts %}
+{% block appstyles %}{% endblock appstyles %}
+{% block appscripts %}{% endblock appscripts %}
+  </body>
 </html>
 

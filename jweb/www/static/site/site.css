@@ -48,6 +48,8 @@ table {
 	border-spacing: 0;
 }
 
+/* Site specific styles */
+
 div#wrap {
     border-top: 3px solid #B81007;
     width: 920px;
@@ -56,3 +58,4 @@ div#wrap {
     margin: 0px auto;
     border-top: 3px solid #B81007;
 }
+
