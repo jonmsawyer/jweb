@@ -1,0 +1,5 @@
+{% block breadcrumbs %}
+   <nav id="breadcrumbs">
+   {{ breadcrumbs|safe|default:'&laquo; <a href="/">Home</a> &raquo;' }}
+   </nav>
+{% endblock breadcrumbs %}

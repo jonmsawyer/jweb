@@ -13,7 +13,10 @@
   <body>
     <div id="wrap">
 {% block appheader %}{% endblock appheader %}
+{% block appbreadcrumbs %}{% endblock appbreadcrumbs %}
+      <div id="main">
 {% block appcontent %}{% endblock appcontent %}
+      </div><!-- end div#main -->
 {% block appfooter %}{% endblock appfooter %}
     </div><!-- end div#wrap -->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

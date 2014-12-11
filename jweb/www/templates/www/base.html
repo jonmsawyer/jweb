@@ -22,6 +22,7 @@
    <link rel="stylesheet" href="{% static 'site/site.css' %}">
    <link rel="stylesheet" href="{% static 'www/www.css' %}">
    <link rel="stylesheet" href="{% static 'www/header.css' %}">
+   <link rel="stylesheet" href="{% static 'www/breadcrumbs.css' %}">
    <link rel="stylesheet" href="{% static 'www/footer.css' %}">
    {% block stylesheets %}{% endblock stylesheets %}
 {% endblock appstylesheets %}
@@ -43,6 +44,12 @@
       {% include 'www/header.html' %}
    {% endblock header %}
 {% endblock appheader %}
+
+{% block appbreadcrumbs %}
+   {% block breadcrumbs %}
+      {% include 'www/breadcrumbs.html' %}
+   {% endblock breadcrumbs %}
+{% endblock appbreadcrumbs %}
 
 {% block appcontent %}
    {% block content %}WWW Home{% endblock content %}
