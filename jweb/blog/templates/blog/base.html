@@ -1,0 +1,63 @@
+{% extends 'base/base.html' %}
+
+{% load staticfiles %}
+
+{% block pagetitle %}Home{% endblock pagetitle %}
+
+{% block pagedescription %}The personal and professional web log of Jonathan Sawyer.{% endblock pagedescription %}
+
+{% block appcopyright %}
+   {% block copyright %}
+      <link rel="copyright" href="{% url 'copyright' %}">
+   {% endblock copyright %}  
+{% endblock appcopyright %}
+
+{% block appfavicon %}
+   {% block favicon %}
+      <link rel="shortcut icon" href="{% static 'www/favicon.jpg' %}" type="image/jpeg" />
+   {% endblock favicon %}
+{% endblock appfavicon %}
+
+{% block appstylesheets %}
+   <link rel="stylesheet" href="{% static 'site/site.css' %}">
+   <link rel="stylesheet" href="{% static 'www/www.css' %}">
+   <link rel="stylesheet" href="{% static 'www/header.css' %}">
+   <link rel="stylesheet" href="{% static 'www/breadcrumbs.css' %}">
+   <link rel="stylesheet" href="{% static 'www/footer.css' %}">
+   {% block stylesheets %}{% endblock stylesheets %}
+{% endblock appstylesheets %}
+
+{% block appjavascripts %}
+   {% block javascripts %}{% endblock javascripts %}
+{% endblock appjavascripts %}
+
+{% block appscripts %}
+   {% block scripts %}{% endblock scripts %}
+{% endblock appscripts %}
+
+{% block appstyles %}
+   {% block styles %}{% endblock styles %}
+{% endblock appstyles %}
+
+{% block appheader %}
+   {% block header %}
+      {% include 'www/header.html' %}
+   {% endblock header %}
+{% endblock appheader %}
+
+{% block appbreadcrumbs %}
+   {% block breadcrumbs %}
+      {% include 'www/breadcrumbs.html' %}
+   {% endblock breadcrumbs %}
+{% endblock appbreadcrumbs %}
+
+{% block appcontent %}
+   {% block content %}Blog Home{% endblock content %}
+{% endblock appcontent %}
+
+{% block appfooter %}
+   {% block footer %}
+      {% include 'www/footer.html' %}
+   {% endblock footer %}
+{% endblock appfooter %}
+

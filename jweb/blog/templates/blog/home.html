@@ -1,0 +1,17 @@
+{% extends 'www/base.html' %}
+{% load staticfiles %}
+
+{% block pagetitle %}Blog{% endblock pagetitle %}
+
+{% block content %}
+{% for blog in blogs %}
+  <div class="blog">
+    <div class="title"><a href="{% url 'blog' slug=blog.slug %}">{{ blog.title }}</a></div>
+    <div class="tagline">{{ blog.tagline }}</div>
+    <div class="created">Created at: {{ blog.created_at }}</div>
+    <div class="author"><em>By {{ blog.author }}</em></div>
+    <div class="content">{{ blog.content }}</div>
+  </div>
+{% endfor %}
+{% endblock %}
+
