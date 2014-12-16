@@ -1,0 +1,19 @@
+article.blog header#blog_title h1 {
+    font-size: 26pt;
+}
+
+article.blog header#blog_title h2 {
+    font-size: 18pt;
+    font-style: italic;
+}
+
+article.blog header#blog_title {
+    padding: 0 0 20px 0;
+}
+
+article.blog section#blog_pubinfo {
+    padding: 0 0 30px 0;
+    border-bottom: 1px solid #ccc;
+    margin: 0 0 10px 0;
+}
+

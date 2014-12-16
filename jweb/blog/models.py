@@ -20,9 +20,10 @@ class Blog(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Blog, self).save(*args, **kwargs)
-        self.slug = slugify("%s-%s-%s-%s" % (self.created_at.year,
-                                             self.created_at.month,
-                                             self.created_at.day,
-                                             self.title))
+        if not self.slug:
+            self.slug = slugify("%s-%s-%s-%s" % (self.created_at.year,
+                                                 self.created_at.month,
+                                                 self.created_at.day,
+                                                 self.title))
         super(Blog, self).save(*args, **kwargs)
 

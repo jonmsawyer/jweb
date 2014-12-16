@@ -27,18 +27,20 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
 MY_APPS = (
+#    'jweb.contrib.markup',
+    'markdown_deux',
     'www',
     'blog',
 )
 
-INSTALLED_APPS = (
+INSTALLED_APPS = MY_APPS + (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-) + MY_APPS
+)
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -90,3 +92,45 @@ STATICFILES_DIRS = tuple()
 for app in MY_APPS:
     STATICFILES_DIRS += (os.path.join(BASE_DIR, app, 'static'),)
 
+
+# Markdown Part Deux
+#from markdown_deux.conf.settings import MARKDOWN_DEUX_DEFAULT_STYLE
+
+MARKDOWN_DEUX_STYLES = {
+    "default": {'extras': {'code-friendly': None}, 'safe_mode': 'escape'},
+    #"default": MARKDOWN_DEUX_DEFAULT_STYLE,
+    "trusted": {
+        "extras": {
+            "code-friendly": None,
+        },
+        # Allow raw HTML (WARNING: don't use this for user-generated
+        # Markdown for your site!).
+        "safe_mode": False,
+    },
+    # Here is what http://code.activestate.com/recipes/ currently uses.
+    "recipe": {
+        "extras": {
+            "code-friendly": None,
+        },
+        "safe_mode": "escape",
+        "link_patterns": [
+            # Transform "Recipe 123" in a link.
+            #(re.compile(r"recipe\s+#?(\d+)\b", re.I),
+            # r"http://code.activestate.com/recipes/\1/"),
+        ],
+        "extras": {
+            "code-friendly": None,
+            "pyshell": None,
+            "demote-headers": 3,
+            "link-patterns": None,
+            # `class` attribute put on `pre` tags to enable using
+            # <http://code.google.com/p/google-code-prettify/> for syntax
+            # highlighting.
+            "html-classes": {"pre": "prettyprint"},
+            "cuddled-lists": None,
+            "footnotes": None,
+            "header-ids": None,
+        },
+        "safe_mode": "escape",
+    }
+}

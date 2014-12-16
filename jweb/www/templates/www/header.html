@@ -14,8 +14,9 @@
     <nav id="navigation" class="clearfix" role="navigation">
       <div id="main-menu">
         <ul class="menu">
-          <li class="first leaf"><a href="/" class="active">Home</a></li>
-          <li class="leaf"><a href="/blog">Blog</a></li>
+          <li class="first leaf"><a href="{% url 'home' %}" class="active">Home</a></li>
+          <li class="leaf"><a href="{% url 'blog_index' %}">Blog</a></li>
+          <li class="leaf"><a href="{% url 'admin:index' %}">Admin</a></li>
           <li class="last leaf"><a href="https://github.com/jonmsawyer" title="Fork me on GitHub!">My Github</a></li>
         </ul>
       </div>

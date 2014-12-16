@@ -12,6 +12,8 @@ def home(request):
     cd = gb(cd, 'Home')
     cd = gb(cd, 'Blog', name='blog_index')
     cd['blogs'] = Blog.objects.all()
+    for blog in cd['blogs']:
+        blog.list_tags = blog.tags.split()
     return render(request, 'blog/home.html', cd)
 
 def blog(request, slug):
@@ -21,7 +23,9 @@ def blog(request, slug):
 
     blog = Blog.objects.get(slug=slug)
 
-    cd = gb(cd, blog.title, reverse('blog', slug=blog.slug))
-    cd['blogs'] = list(blog)
+    #cd = gb(cd, blog.title, reverse('blog', blog.slug))
+    cd['blogs'] = (blog,)
+    for blog in cd['blogs']:
+        blog.list_tags = blog.tags.split()
     return render(request, 'blog/home.html', cd)
 
