@@ -1,3 +1,6 @@
 *.pyc
 db.sqlite3
 jweb/static/
+jweb/jweb/dev_settings.py
+jweb/jweb/prod_settings.py
+jweb/jweb/test_settings.py

@@ -14,18 +14,23 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 import re
 
+try:
+    from jweb import dev_settings as extra_settings
+except:
+    from jweb import prod_settings as extra_settings
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'hb!xn8m(3udeq@b0-vmqf=)q4=707ffz@k#3+cej1%&kbnz2_@'
+SECRET_KEY = extra_settings.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = extra_settings.DEBUG
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = extra_settings.ALLOWED_HOSTS
 
 MY_APPS = (
 #    'jweb.contrib.markup',
@@ -61,12 +66,7 @@ WSGI_APPLICATION = 'jweb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+DATABASES = extra_settings.DATABASES
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
