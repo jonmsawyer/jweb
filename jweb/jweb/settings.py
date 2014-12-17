@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+import re
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -101,7 +102,19 @@ MARKDOWN_DEUX_STYLES = {
     #"default": MARKDOWN_DEUX_DEFAULT_STYLE,
     "trusted": {
         "extras": {
-            "code-friendly": None,
+            "code-friendly": True,
+            "link_patterns": [
+                (
+                    re.compile(r"recipe\s+#?(\d+)\b", re.I),
+                    r"http://code.activestate.com/recipes/\1/",
+                ),
+            ],
+            "pattern-replacements": [
+                (
+                    re.compile(r'\bgist:(\d+)\b', re.I|re.M|re.S),
+                    r'<script src="https://gist.github.com/jonmsawyer/\1.js"></script>',
+                ),
+            ],
         },
         # Allow raw HTML (WARNING: don't use this for user-generated
         # Markdown for your site!).

@@ -12,8 +12,90 @@ article.blog header#blog_title {
 }
 
 article.blog section#blog_pubinfo {
-    padding: 0 0 30px 0;
+    padding: 0 0 20px 0;
     border-bottom: 1px solid #ccc;
     margin: 0 0 10px 0;
 }
 
+article.blog section#blog_content a {
+    text-decoration: underline;
+}
+
+article.blog ul {
+    list-style-type: disc;
+    padding: 0 0 0 30px;
+    margin: 10px 0;
+}
+
+article.blog ol {
+    list-style-type: decimal;
+    padding: 0 0 0 30px;
+    margin: 10px 0;
+}
+
+article.blog ul ul,
+article.blog ul ol,
+article.blog ol ul,
+article.blog ol ol {
+    margin: 0;
+}
+
+article.blog h1,
+article.blog h2,
+article.blog h3,
+article.blog h4,
+article.blog h5,
+article.blog h6 {
+    margin: 0.7em 0;
+}
+
+article.blog {
+    font-family: Georgia, Cambria, Times, serif;
+    font-size: 12pt;
+    line-height: 1.2em;
+}
+
+article.blog p {
+    margin: 1em 0;
+}
+
+article.blog code,
+article.blog pre  {
+    font-size: 12px;
+    border: 1px solid #f86057;
+    background-color: #f8d0c7;
+    border-radius: 3px;
+    color: inherit;
+    line-height: 1.3em;
+}
+
+article.blog pre code {
+    border: 0;
+    background-color: inherit;
+}
+
+article.blog pre {
+    padding: 3px;
+    margin: 0 0 0.8em 0;
+}
+
+article.blog blockquote {
+    background: #e9e9e9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019"
+}
+
+article.blog blockquote:before {
+    color: #aaa;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+article.blog blockquote p {
+    display: inline;
+}
