@@ -33,13 +33,15 @@ TEMPLATE_DEBUG = DEBUG
 ALLOWED_HOSTS = extra_settings.ALLOWED_HOSTS
 
 MY_APPS = (
-#    'jweb.contrib.markup',
-    'markdown_deux',
     'www',
     'blog',
 )
 
-INSTALLED_APPS = MY_APPS + (
+APPS_NO_STATIC = (
+    'markdown_deux',
+)
+
+INSTALLED_APPS = MY_APPS + APPS_NO_STATIC + (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
