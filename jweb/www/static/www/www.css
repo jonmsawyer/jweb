@@ -1,7 +1,7 @@
 /* Global WWW app styles */
 
 body {
-    background-color: #eee;
+    background: url('/static/www/bg2.jpg') #888 repeat fixed;
     color: #000;
 }
 

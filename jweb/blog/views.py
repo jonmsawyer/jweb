@@ -14,6 +14,7 @@ def home(request):
     cd['blogs'] = Blog.objects.all()
     for blog in cd['blogs']:
         blog.list_tags = blog.tags.split()
+    cd['blog_active'] = 'active'
     return render(request, 'blog/home.html', cd)
 
 def blog(request, slug):
@@ -27,5 +28,6 @@ def blog(request, slug):
     cd['blogs'] = (blog,)
     for blog in cd['blogs']:
         blog.list_tags = blog.tags.split()
+    cd['blog_active'] = 'active'
     return render(request, 'blog/home.html', cd)
 
