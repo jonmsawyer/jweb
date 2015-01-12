@@ -1,33 +1,26 @@
-{% extends 'www/base.html' %}
+{% extends 'blog/base.html' %}
 {% load staticfiles %}
 {% load markdown_deux_tags %}
 
-{% block pagetitle %}Blog{% endblock pagetitle %}
-
-{% block stylesheets %}
-    <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
-{% endblock stylesheets %}
+{% block pagetitle %}Blog Home{% endblock pagetitle %}
 
 {% block content %}
 {% for blog in blogs %}
-  <div class="blog">
-    <article class="blog">
-      <header id="blog_title">
-        <h1 class="title"><a href="{% url 'blog' slug=blog.slug %}">{{ blog.title }}</a></h1>
-        <h2 class="tagline">{{ blog.tagline }}</h2>
-      </header>
-      <section id="blog_pubinfo">
-        <time class="created" pubdate="{{ block.created_at }}">Created at: {{ blog.created_at }}</time>
-        <div class="author"><em>By {{ blog.author }}</em></div>
-      </section>
-      <section id="blog_content">
-        <div class="content">{{ blog.content|markdown:"trusted" }}</div>
-      </section>
-      <footer id="blog_tags">
-        <div class="tags">{% for tag in blog.list_tags %}[{{ tag }}]{% endfor %}</div>
-      </footer>
-    </article>
-  </div>
+    <div style="padding: 0 0 1em 0;">
+        <h3><a href="{% url 'blog' slug=blog.slug %}">{{ blog.title }}</a></h3>
+        <div><small style="font-size: 9pt;">{{ blog.created_at }} by {{ blog.author }}</small></div>
+        <blockquote style="margin: 0.5em 0 0 1.5em; border-left: 5px solid #B81007; padding-left: 5px;">
+            {{ blog.preview|markdown:"trusted"|truncatewords_html:"150" }}<br />
+            <a href="{% url 'blog' slug=blog.slug %}">Read more...</a>
+        </blockquote>
+    </div>
 {% endfor %}
-{% endblock %}
+    <div class="pages" style="text-align: center;">Page:
+{% for p in page_range %}
+        {% if current_page_num == p %}{{p}}{% else %}
+        <a href="{% url 'blog_index_page' page=p %}">{{p}}</a>
+        {% endif %}
+{% endfor %}
+    </div>
+{% endblock content %}
 

@@ -1,7 +1,10 @@
 {% extends 'www/base.html' %}
+{% load staticfiles %}
+{% load markdown_deux_tags %}
 
 {% block content %}
-http://bgrepeat.com/128/128-95.jpg
-Copyright page and information. Blah.
-{% endblock %}
+<div class="markdown">
+{{ copyright.content|markdown:"trusted" }}
+</div>
+{% endblock content %}
 
