@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% load markdown_deux_tags %}
 
-{% block pagetitle %}Blog{% endblock pagetitle %}
+{% block pagetitle %}{% for blog in blogs %}{{ blog.title }}{% endfor %}{% endblock pagetitle %}
 
 {% block content %}
 {% for blog in blogs %}
@@ -13,7 +13,7 @@
         {% if blog.tagline %}<h2 class="tagline">{{ blog.tagline }}</h2>{% endif %}
       </header>
       <section id="blog_pubinfo">
-        <time class="created" pubdate="{{ block.created_at }}">{{ blog.created_at }}</time>
+        <time class="created" pubdate="{{ blog.created_at }}">{{ blog.created_at }}</time>
         <div class="author"><em>By {{ blog.author }}</em></div>
       </section>
       <section id="blog_content">

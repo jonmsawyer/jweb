@@ -12,6 +12,14 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+import sys
+MD_DEUX_CONTRIB = os.path.join(BASE_DIR, 'jweb', 'inst', 'django-markdown-deux', 'lib')
+MD2_CONTRIB = os.path.join(BASE_DIR, 'jweb', 'inst', 'python-markdown2', 'lib')
+if os.path.isdir(MD_DEUX_CONTRIB):
+    sys.path.insert(0, MD_DEUX_CONTRIB)
+if os.path.isdir(MD2_CONTRIB):
+    sys.path.insert(0, MD2_CONTRIB)
+
 import re
 
 try:
@@ -122,9 +130,9 @@ MARKDOWN_DEUX_STYLES = {
                     r"http://code.activestate.com/recipes/\1/",
                 ),
             ],
-            "pattern-replacements": [
+            "pattern_replacements": [
                 (
-                    re.compile(r'\bgist:(\d+)\b', re.I|re.M|re.S),
+                    re.compile(r'\[gist:(\d+)\]', re.I|re.M|re.S),
                     r'<script src="https://gist.github.com/jonmsawyer/\1.js"></script>',
                 ),
             ],

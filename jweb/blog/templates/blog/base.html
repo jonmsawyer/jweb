@@ -25,6 +25,8 @@
    <link rel="stylesheet" href="{% static 'www/breadcrumbs.css' %}">
    <link rel="stylesheet" href="{% static 'www/footer.css' %}">
    <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+   <link rel="stylesheet" href="{% static 'www/syntaxhighlighter_3.0.83/styles/shCore.css' %}">
+   <link rel="stylesheet" href="{% static 'www/syntaxhighlighter_3.0.83/styles/shThemeDefault.css' %}">
    {% block stylesheets %}{% endblock stylesheets %}
 {% endblock appstylesheets %}
 
@@ -33,6 +35,25 @@
 {% endblock appjavascripts %}
 
 {% block appscripts %}
+   <script src="{% static 'www/syntaxhighlighter_3.0.83/scripts/shCore.js' %}"></script>
+   <script src="{% static 'www/syntaxhighlighter_3.0.83/scripts/shBrushBash.js' %}"></script>
+   <script src="{% static 'www/syntaxhighlighter_3.0.83/scripts/shBrushCpp.js' %}"></script>
+   <script src="{% static 'www/syntaxhighlighter_3.0.83/scripts/shBrushCSharp.js' %}"></script>
+   <script src="{% static 'www/syntaxhighlighter_3.0.83/scripts/shBrushCss.js' %}"></script>
+   <script src="{% static 'www/syntaxhighlighter_3.0.83/scripts/shBrushDiff.js' %}"></script>
+   <script src="{% static 'www/syntaxhighlighter_3.0.83/scripts/shBrushJava.js' %}"></script>
+   <script src="{% static 'www/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js' %}"></script>
+   <script src="{% static 'www/syntaxhighlighter_3.0.83/scripts/shBrushPhp.js' %}"></script>
+   <script src="{% static 'www/syntaxhighlighter_3.0.83/scripts/shBrushPlain.js' %}"></script>
+   <script src="{% static 'www/syntaxhighlighter_3.0.83/scripts/shBrushPowerShell.js' %}"></script>
+   <script src="{% static 'www/syntaxhighlighter_3.0.83/scripts/shBrushPython.js' %}"></script>
+   <script src="{% static 'www/syntaxhighlighter_3.0.83/scripts/shBrushRuby.js' %}"></script>
+   <script src="{% static 'www/syntaxhighlighter_3.0.83/scripts/shBrushSql.js' %}"></script>
+   <script src="{% static 'www/syntaxhighlighter_3.0.83/scripts/shBrushXml.js' %}"></script>
+   <script>
+       SyntaxHighlighter.all();
+       //$(document).ready(function() { $('.syntaxhighlighter .toolbar').remove(); });
+   </script>
    {% block scripts %}{% endblock scripts %}
 {% endblock appscripts %}
 
