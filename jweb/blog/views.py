@@ -59,7 +59,7 @@ def tag(request, tag):
     cd = gb(cd, 'Tag', name='tag_index')
 
     if tag:
-        blogs_list = Blog.objects.filter(tag__like=tag).order_by('-created_at')
+        blogs_list = Blog.objects.filter(tags__contains=tag).order_by('-created_at')
     else:
         blogs_list = Blog.objects.order_by('-created_at')
 
