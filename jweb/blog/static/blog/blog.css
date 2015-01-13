@@ -1,10 +1,12 @@
 article.blog header#blog_title h1 {
     font-size: 26pt;
+    line-height: 1em;
 }
 
 article.blog header#blog_title h2 {
     font-size: 18pt;
     font-style: italic;
+    line-height: 1em;
 }
 
 article.blog header#blog_title {
@@ -15,6 +17,11 @@ article.blog section#blog_pubinfo {
     padding: 0 0 20px 0;
     border-bottom: 1px solid #ccc;
     margin: 0 0 10px 0;
+}
+
+article.blog section#blog_pubinfo,
+article.blog section#blog_pubinfo div {
+    text-align: center;
 }
 
 article.blog section#blog_content a {

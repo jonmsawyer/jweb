@@ -49,6 +49,7 @@ def blog(request, slug):
     
     cd['blog_active'] = 'active'
     cd['blogs'] = (blog,)
+    cd = gb(cd, str(blog.title), no_link=True)
 
     return render(request, 'blog/blog.html', cd)
 
@@ -57,6 +58,8 @@ def tag(request, tag):
     cd = gb(cd, 'Home')
     cd = gb(cd, 'Blog', name='blog_index')
     cd = gb(cd, 'Tag', name='tag_index')
+    if tag:
+        cd = gb(cd, str(tag), no_link=True)
 
     if tag:
         blogs_list = Blog.objects.filter(tags__contains=tag).order_by('-created_at')

@@ -1,9 +1,11 @@
+from types import NoneType
+
 from django.core.urlresolvers import reverse
 
 class BreadcrumbException(Exception):
     pass
 
-def generate_breadcrumbs(cd, txt, name=None, url=None):
+def generate_breadcrumbs(cd, txt, name=None, url=None, no_link=False):
     if not isinstance(cd, dict):
         raise BreadcrumbException("argument 'cd' must be of type 'dict'")
 
@@ -21,15 +23,20 @@ def generate_breadcrumbs(cd, txt, name=None, url=None):
 
     if bc:
         bc += ' &raquo; '
-
-    if url:
-        link = url
-    elif name:
-        link = reverse(name)
+    
+    if no_link:
+        if isinstance(txt, NoneType):
+            return cd
+        bc += txt
     else:
-        link = reverse(txt.lower())
-
-    bc += '<a href="{}">{}</a>'.format(link, txt)
+        if url:
+            link = url
+        elif name:
+            link = reverse(name)
+        else:
+            link = reverse(txt.lower())
+    
+        bc += '<a href="{}">{}</a>'.format(link, txt)
 
     cd['breadcrumbs'] = bc
 

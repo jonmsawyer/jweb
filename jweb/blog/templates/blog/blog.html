@@ -13,14 +13,21 @@
         {% if blog.tagline %}<h2 class="tagline">{{ blog.tagline }}</h2>{% endif %}
       </header>
       <section id="blog_pubinfo">
-        <time class="created" pubdate="{{ block.created_at }}">Created at: {{ blog.created_at }}</time>
+        <time class="created" pubdate="{{ block.created_at }}">{{ blog.created_at }}</time>
         <div class="author"><em>By {{ blog.author }}</em></div>
       </section>
       <section id="blog_content">
         <div class="content">{{ blog.content|markdown:"trusted" }}</div>
       </section>
       <footer id="blog_tags">
-        <div class="tags">{% for tag in blog.list_tags %}<a href="{% url 'tag_index' tag=tag %}">[{{ tag }}]</a>{% endfor %}</div>
+        <div class="tags">Tags: {% for tag in blog.list_tags %}<a href="{% url 'tag_index' tag=tag %}">[{{ tag }}]</a>{% endfor %}</div>
+        <!-- <div class="social">
+            Share:
+            <a href="http://www.facebook.com/sharer.php?u=https://{{request.META.HTTP_HOST|urlencode}}{{request.get_full_path|urlencode}}">Facebook</a>,
+            <a href="http://twitter.com/share?url=https://{{request.META.HTTP_HOST|urlencode}}{{request.get_full_path|urlencode}}">Twitter</a>,
+            Google+,
+            Reddit,
+        </div> -->
       </footer>
     </article>
   </div>
