@@ -20,7 +20,7 @@
         <div class="content">{{ blog.content|markdown:"trusted" }}</div>
       </section>
       <footer id="blog_tags">
-        <div class="tags">{% for tag in blog.list_tags %}[{{ tag }}]{% endfor %}</div>
+        <div class="tags">{% for tag in blog.list_tags %}<a href="{% url 'tag_index' tag=tag %}">[{{ tag }}]</a>{% endfor %}</div>
       </footer>
     </article>
   </div>
